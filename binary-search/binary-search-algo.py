@@ -9,12 +9,7 @@ def binary_search(list, element):
         steps = steps+1
         middle = (start + end) // 2
         
-        if element == list[middle] :
-            return middle
-        if element < list[middle]:
-            end = middle -1
-        else:
-            start = middle + 1
+      
 
     return -1
 

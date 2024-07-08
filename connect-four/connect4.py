@@ -36,7 +36,7 @@ def print_board(board):
 
 
 def winning_move(board, piece):
-    # Check horizontal locations for win
+
     for c in range(COLUMN_COUNT - 3):
         for r in range(ROW_COUNT):
             if (
@@ -47,7 +47,7 @@ def winning_move(board, piece):
             ):
                 return True
 
-    # Check vertical locations for win
+ 
     for c in range(COLUMN_COUNT):
         for r in range(ROW_COUNT - 3):
             if (
@@ -58,7 +58,6 @@ def winning_move(board, piece):
             ):
                 return True
 
-    # Check positively sloped diaganols
     for c in range(COLUMN_COUNT - 3):
         for r in range(ROW_COUNT - 3):
             if (
@@ -69,7 +68,6 @@ def winning_move(board, piece):
             ):
                 return True
 
-    # Check negatively sloped diaganols
     for c in range(COLUMN_COUNT - 3):
         for r in range(3, ROW_COUNT):
             if (
@@ -129,13 +127,12 @@ print_board(board)
 game_over = False
 turn = 0
 
-# initalize pygame
+
 pygame.init()
 
-# define our screen size
+
 SQUARESIZE = 100
 
-# define width and height of board
 width = COLUMN_COUNT * SQUARESIZE
 height = (ROW_COUNT + 1) * SQUARESIZE
 
