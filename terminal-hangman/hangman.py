@@ -11,10 +11,8 @@ def get_word():
     return word
 
 
-# function to play the game
 def play(word):
 
-    # intialise variable
     word_completion = "_" * len(word) 
     guessed = False 
     guessed_letters = [] 
@@ -27,26 +25,23 @@ def play(word):
     print("Length of the word: ", len(word))
     print("\n")
 
-    # user can keep guessing when the tries is more than 0 and the answer is not found yet.
     while not guessed and tries > 0:
 
-        # Display message and ask for user input and convert it into uppercase
+    
         guess = input("Please guess a letter or the word: ").upper()
 
-        # check the length of the user input and is it alpha or not
+  
         if len(guess) == 1 and guess.isalpha():
 
-            # display message when user guess the same letter twice
             if guess in guessed_letters:
                 print("You already guessed the letter", guess)
 
-            # display message and deduct the tries when user guess the wrong letter
+    
             elif guess not in word:
                 print(guess, "is not in the word.")
                 tries -= 1
                 guessed_letters.append(guess)
 
-            # dispay message and store the letter when the user guess the correct letter
             else:
                 print("Good job,", guess, "is in the word!")
                 guessed_letters.append(guess)
@@ -84,14 +79,14 @@ def play(word):
         else:
             print("Not a valid guess.")
 
-        # display the format of hangman each time of guess
+
         print(display_hangman(tries))
         print(word_completion)
         print("\n")
         print("Length of the word: ", len(word))
         print("\n")
 
-    # if the variable of guess is true means user win the game
+
     if guessed:
         print("Congrats, you guessed the word! You win!")
     # else means user lose the game.
