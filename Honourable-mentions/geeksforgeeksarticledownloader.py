@@ -31,13 +31,7 @@ def get_driver():
     return browser
 
 
-def download_article(URL):
-    browser = get_driver()
-    browser.get(URL)
-
-    # launch print and save as pdf
-    browser.execute_script("window.print();")
-    browser.close()
+# Removed the original function as it was not returning anything
 
 
 if __name__ == "__main__":
